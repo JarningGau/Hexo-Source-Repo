@@ -1,0 +1,4 @@
+*.log
+public/
+.deploy_git/
+/_config.yml
