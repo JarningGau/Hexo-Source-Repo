@@ -36,10 +36,10 @@ Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以�
 - [x] 修复 LaTex 公式渲染问题
 - [x] 新增 LaTex 公式编号功能
 
-### 2. 书写一个质能守恒公式[^LaTeX]
+### 2. 书写一个质能守恒公式 [^1]
 $$E=mc^2$$
 
-### 3. 高亮一段代码[^code]
+### 3. 高亮一段代码 [^2]
 
 ```python
 @requires_authorization
@@ -186,9 +186,9 @@ Bob-->Alice: I am good thanks!
 作者 [@ghosert][3]     
 2016 年 07月 07日    
 
-[^LaTeX]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
+[^1]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
 
-[^code]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
+[^2]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
 
 [1]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown
 [2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册
