@@ -79,6 +79,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+Plugins:
+    - hexo-footnotes
 theme: next
 
 # Deployment
@@ -123,3 +125,5 @@ qiniu:
     folder: js
   css:
     folder: css
+
+    
