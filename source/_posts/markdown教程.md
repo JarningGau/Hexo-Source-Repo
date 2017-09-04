@@ -2,6 +2,7 @@
 title: markdown教程
 date: 2017-09-04 15:59:56
 tags:
+  - Markdown
 ---
 # 欢迎使用 Cmd Markdown 编辑阅读器
 
@@ -66,7 +67,7 @@ cond(no)->op
 
 ### 5. 高效绘制 [序列图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图)
 
-```seq
+```sequence
 Alice->Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!
