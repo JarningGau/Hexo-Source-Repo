@@ -4,11 +4,11 @@ environment:
   access_token:
     secure: vMVZZ67T9flbs6SgK4ajAjnIOfpealLfic8re/XxOsbAWpXV9tx/ol26kudtlxcz
 
-install:
-  - node --version
-  - npm --version
-  - npm install
-  - npm install hexo-cli -g
+#install:
+#  - node --version
+#  - npm --version
+#  - npm install
+#  - npm install hexo-cli -g
 
 build_script:
   - hexo generate
