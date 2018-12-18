@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Jarning
+title: Dishes of Genomics
 subtitle: 
 description: 
 author: Jarning
@@ -81,7 +81,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 Plugins:
     - hexo-footnotes
-theme: next
+theme: crisp
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
