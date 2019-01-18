@@ -8,7 +8,7 @@ categories:
   - blog-management
 description: 
 ---
-<!-- more -->
+
 
 ## 新建博客
 
@@ -17,6 +17,9 @@ hexo new title
 ```
 &ensp;&ensp;hexo会生成 `./source/_posts/demo.md`
 &ensp;&ensp;打开该文件，我们会发现hexo为我们自动生成了文章的标题和创建时间，另外可以自己添加标签和分类
+
+<!-- more -->
+
 ```
 ---
 title: demo
