@@ -10,7 +10,10 @@ description:
 ---
 # hexo+GitHub博客运维
 ---
+<!-- more -->
+
 ## 新建博客
+
 ```
 hexo new title
 ```
@@ -89,7 +92,7 @@ git push -u origin master #推送到远程仓库进行备份
 &ensp;&ensp;然后执行以下命令提交到本地的`Git仓库`中
 
     git commit -m "Remove the now ignored directory some-directory"
-    
+
 &ensp;&ensp;最后`push`到`Github`上的仓库中。
 
     git push origin master
