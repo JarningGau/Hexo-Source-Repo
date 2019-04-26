@@ -2,7 +2,7 @@
 title: 方差分析
 date: 2019-03-29 14:12:13
 tags: 统计学 R
-categories:统计学基础
+categories: 学点统计
 description:
 ---
 
