@@ -1,8 +1,11 @@
 ---
 title: 方差分析
 date: 2019-03-29 14:12:13
-tags: 统计学 R
-categories: 学点统计
+tags: 
+  - 统计学 
+  - R
+categories: 
+  - 学点统计
 description:
 ---
 
@@ -17,6 +20,8 @@ description:
 F检验
 
 组内因子
+
+<!-- more -->
 
 单因素组内方差分析
 
