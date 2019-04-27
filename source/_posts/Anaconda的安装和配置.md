@@ -65,7 +65,7 @@ conda list # 列出安装的软件包
 conda search <package ambigious name> # 当我们想安装某个包却不知道具体名字，可以用这个命令获取其完整名字以及各种版本号
 ---
 例如： conda search numpy # *表示当前已经安装的包
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Fetching package metadata ...............
 numpy                        1.7.2           py27_blas_openblas_201  conda-forge     [blas_openblas]
                              1.7.2           py27_blas_openblas_202  conda-forge     [blas_openblas]
@@ -86,7 +86,7 @@ numpy_sugar                  1.0.6                    py27_0  conda-forge
 numpydoc                     0.6.0                    py27_0  conda-forge     
                              0.6.0                    py34_0  conda-forge             
 xnumpy                       0.0.1                    py27_0  conda-forge     
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 ```
 
 - 安装包
@@ -135,7 +135,7 @@ conda config --set show_channel_urls yes
 
 # 显示已有的通道
 conda config --get channels
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 --add channels 'defaults'   # lowest priority
 --add channels 'https://mirrors.ustc.edu.cn/anaconda/pkgs/free/'
 --add channels 'https://mirrors.ustc.edu.cn/anaconda/pkgs/main/'
@@ -143,10 +143,28 @@ conda config --get channels
 --add channels 'https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/'
 --add channels 'https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/'
 --add channels 'https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/'   # highest priority
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+# 移除冗余的通道(示例)
+conda config --remove channels 'https://mirrors.ustc.edu.cn/anaconda/pkgs/free/'
 ```
 
 conda通道的配置文件一般在`~/.condarc`里面，内容如下。全局控制conda的安装在`conda_path/.condarc`，具体操作见<https://conda.io/docs/user-guide/configuration/admin-multi-user-install.html>
+
+【补充】
+
+最近Anaconda清华和科大的镜像都挂了，改用腾讯的镜像
+
+```shell
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/pkgs/free/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/menpo/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/peterjc123/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/pkgs/main/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.cloud.tencent.com/anaconda/cloud/pytorch/
+conda config --set show_channel_urls yes
+```
 
 
 
@@ -163,7 +181,7 @@ conda通道的配置文件一般在`~/.condarc`里面，内容如下。全局控
 ```shell
 conda create -n <env_name> python=<version> # 指定python版本号是可选的，不指定的话，会安装到默认的python版本号下，即在命令行中输入python所进入的那个版本
 conda create -n bsc_bioinfo # 例如，新建一个叫bsc_bioinfo的环境，用户安装生信分析所需要的软件
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Solving environment: done
 
 
@@ -183,7 +201,7 @@ Please update conda by running
 
 
 Proceed ([y]/n)?
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 # 输入 y
 ```
 
@@ -192,12 +210,12 @@ Proceed ([y]/n)?
 ```shell
 conda env list # *是当前环境
 ## 注意，尽量不要把各种包都一块安装到base环境下。
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 # conda environments:
 #
 base                  *  /root/anaconda2
 bsc_bioinfo              /root/anaconda2/envs/bsc_bioinfo
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 ```
 
 - 指定环境安装包
@@ -228,7 +246,7 @@ source deactivate
 
 ```shell
 conda search r-essentials
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 Loading channels: done
 Name                       Version                   Build  Channel
 r-essentials               1.0                    r3.2.1_0  defaults
@@ -275,7 +293,7 @@ r-essentials               3.4.3                  mro343_0  defaults
 r-essentials               3.4.3                  mro343_0  r
 r-essentials               3.4.3                    r343_0  defaults
 r-essentials               3.4.3                    r343_0  r
---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 
 conda install -c r -n bsc_bioinfo r-essentials=3.4.3
 # 需要安装的包太多了，可能会出现网络超时，此时只要重新运行命令，已经下载的包会自动跳过。
