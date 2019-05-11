@@ -13,7 +13,9 @@ description:
 
 <!-- more -->
 
-## 检查服务器端的R版本
+## 在centos上安装和配置RStudio Server
+
+### 检查服务器端R版本
 
 > R版本为R-3.2.2，太过老旧，进行升级。
 
