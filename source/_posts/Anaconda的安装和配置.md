@@ -121,7 +121,6 @@ Conda默认的源访问速度有些慢，可以增加国内的源；另外还可
 
 ```shell
 conda config --add channels conda-forge # Lowest priority
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 conda config --add channels r # Optional
 conda config --add channels defaults
 conda config --add channels bioconda 
