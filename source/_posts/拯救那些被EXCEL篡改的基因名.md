@@ -19,7 +19,7 @@ description:
 
 <!--more-->
 
-使用起来也很简单：
+## 一个简单的例子
 
 ```R
 library(HGNChelper)
@@ -44,4 +44,30 @@ Human gene symbols should be all upper-case except for the 'orf' in open reading
 ```
 
 `checkGeneSymbols`不光可以教程EXCEL造成的篡改，同样也可以将Alias转换成标准基因名。但是有一些错误是无法解决的，比如`1-Mar`这样的错误，可能会对应多个Gene Symbol。这样的数据只能舍弃了。
+
+---
+
+## 一个典型的应用场景
+
+```R
+library(HGNChelper)
+# expression_matrix_file是一个行为基因，列为样本的基因表达矩阵
+mtx <- read.table(expression_matrix_file, sep="\t", header=T, row.names=1)
+dim(mtx)
+# check gene symtol
+t <- checkGeneSymbols(rownames(mtx))
+table(t$Approved)
+table(is.na(t$Suggested.Symbol))
+# delete <NA> and duplicated Suggested.Symbol
+mtx$Suggested.Symbol <- t$Suggested.Symbol
+mtx <- mtx[!is.na(mtx$Suggested.Symbol), ]
+mtx <- mtx[!duplicated(mtx$Suggested.Symbol), ]
+# delete multiple Suggested.Symbol
+mtx <- mtx[!grepl("///", mtx$Suggested.Symbol), ]
+# reset rownames
+rownames(mtx) <- mtx$Suggested.Symbol
+# delete Suggested.Symbol columns
+mtx <- subset(mtx, select = -c(Suggested.Symbol))
+dim(mtx)
+```
 
