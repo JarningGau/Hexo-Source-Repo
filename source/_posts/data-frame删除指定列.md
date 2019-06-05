@@ -3,7 +3,7 @@ title: data.frame删除指定列
 date: 2019-06-04 15:00:47
 tags:
   - R
-  - 数据清洗
+  - R basic
 categories:
   - 搬砖随笔
 description:

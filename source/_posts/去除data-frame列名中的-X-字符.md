@@ -3,6 +3,7 @@ title: 去除data.frame列名中的'X'字符
 date: 2019-06-04 12:36:41
 tags:
   - R
+  - R basic
 categories:
   - 搬砖随笔
 description:
