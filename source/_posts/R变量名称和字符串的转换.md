@@ -30,25 +30,39 @@ data
 - 需求：批量画散点图
 
 ```R
+library(ggplot2)
 col_names <- colnames(data)
-plot_list <- lapply(3:6, function(x) {
-    ggplot(data=data, aes(x=x, y=y, color=col_names[x])) + geom_point() + ggtitle(col_names[x])
+plot_list <- lapply(3:6, function(xx) {
+    ggplot(data=data, aes(x=x, y=y, color=col_names[xx])) + geom_point() + ggtitle(col_names[xx])
 })
+cowplot::plot_grid(plotlist = plot_list, ncol = 2)
 ```
 
-- 这样其实是不行的，因为无法传递字符串给color
+- 这样其实是不行的，我们将字符串传给color，color不会读取data中的数据，而是把col_names[xx]当做一个字符串来处理。
 
 ## get
 
 - 解决方案
 
 ```
-col_names <- colnames(data)[3:length(col_names)]
-plot_list <- lapply(col_names, function(x) {
-    ggplot(data=data, aes(x=x, y=y, color=x)) + geom_point() + ggtitle(x)
+library(ggplot2)
+col_names <- colnames(data)[3:6]
+plot_list <- lapply(col_names, function(xx) {
+    ggplot(data=data, aes(x=x, y=y, color=get(xx))) + geom_point() + ggtitle(xx) + 
+    theme(plot.title = element_text(hjust = 0.5))
 })
 cowplot::plot_grid(plotlist = plot_list, ncol = 2)
 ```
+
+<!--more-->
+
+- Wrong way
+
+![](https://raw.githubusercontent.com/JarningGau/blog_images/master/20190609/QQ图片20190609202013.png)
+
+- Correct way
+
+![](https://raw.githubusercontent.com/JarningGau/blog_images/master/20190609/QQ图片20190609202130.png)
 
 ## assign
 
