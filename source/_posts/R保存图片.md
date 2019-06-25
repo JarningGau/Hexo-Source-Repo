@@ -27,6 +27,29 @@ dev.off()
 
 <!--more-->
 
+## 批量绘图
+
+```R
+# On Rstudio
+for (module_name in names(module.features)) {
+  p.list <- list(
+    FeaturePlotMeta(seu.tenX.add_module_score, features = module_name, reduction = "umap", title = paste0(module_name, " (10X)")),
+    FeaturePlotMeta(seu.tenX.add_module_score, features = module_name, reduction = "tsne", title = paste0(module_name, " (10X)")),
+    FeaturePlotMeta(seu.smart.add_module_score, features = module_name, reduction = "umap", 
+                  title = paste0(module_name, " (Smart-seq2)")),
+    FeaturePlotMeta(seu.smart.add_module_score, features = module_name, reduction = "tsne", 
+                  title = paste0(module_name, " (Smart-seq2)"))
+  )
+  for (i in 1:length(p.list)) {
+    png(filename = paste0("plots/human_gene_module/", module_name, "-", i,".png"), width = 6, height = 5, units = "in", res = 600)
+    plot(p.list[[i]]) # 注意这里，一定要用plot，虽然目前我还不知道为什么
+    dev.off()
+  }
+}
+```
+
+
+
 ## 相关R文档
 
 ```R 
