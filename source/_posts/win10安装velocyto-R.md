@@ -198,7 +198,7 @@ rocker/r-ver        3.6                 afe7688ca972        10 months ago       
 
 ```shell
 # 从velocyto镜像启动一个名为velocyto的容器
-docker run --name velocyto -itv velocyto
+docker run --name velocyto -it velocyto
 # 创建一个挂载的锚点，当前在/home/user下
 mkdir FigureYa177RNAvelocity
 # 退出容器
@@ -206,8 +206,8 @@ exit
 # 查看刚才的容器编号
 docker ps -a 
 # 将该容器转化为一个名为velocyto_figureya的新镜像
-docker commit df73c896107a  velocyto_figureya
-# 从镜像启动一个名为velocyto的容器，并挂载本地文件
+docker commit df73c896107a velocyto_figureya
+# 从velocyto_figureya镜像启动一个名为velocyto的容器，并挂载本地文件
 docker run --name velocyto_figureya -itv /path/to/FigureYa177RNAvelocity:/home/user/FigureYa177RNAvelocity velocyto
 ```
 
