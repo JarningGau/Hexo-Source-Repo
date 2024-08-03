@@ -94,10 +94,10 @@ scheme: Pisces
 social:
   #E-Mail: jarninggau@gmail.com
   GitHub: https://github.com/JarningGau
-  #Twitter: https://twitter.com/your-user-name
-  微博: http://weibo.com/jarning
-  豆瓣: http://douban.com/people/jarning/
-  知乎: https://www.zhihu.com/people/gao-jia-zhu-82/
+  Twitter: https://x.com/GauJarning
+  #微博: http://weibo.com/jarning
+  #豆瓣: http://douban.com/people/jarning/
+  #知乎: https://www.zhihu.com/people/gao-jia-zhu-82/
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -127,7 +127,7 @@ links_title: Links
 #links_layout: block
 links_layout: inline
 links:
-  BioStaCs&nbspGroup: http://www.biostacs.com
+  #BioStaCs&nbspGroup: http://www.biostacs.com
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
